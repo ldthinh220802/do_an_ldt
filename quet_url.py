@@ -4,15 +4,6 @@ import re
 
 
 
-def sua_url_goc(url_goc):
-    if url_goc[-1] == '/':
-        url_goc = url_goc[0: -1]
-        return url_goc
-    else:
-        return url_goc
-
-
-
 def tim_url_lien_quan(url, url_goc):
     url_tim_duoc = set()
     link = requests.get(url)
@@ -39,14 +30,3 @@ def them_va_duyet_hang_cho(hang_cho, url_goc, so_luong_trang):
         hang_cho = hang_cho | (url_tim_duoc - history)
         history = history | url_tim_duoc
     return history
-
-
-def main():
-    url_tim_duoc = tim_url_lien_quan('https://vietnamnet.vn', 'https://vietnamnet.vn')
-    history = them_va_duyet_hang_cho(url_tim_duoc)
-    for i in history:
-        print(i)
-
-
-if __name__ == '__main__':
-    main()

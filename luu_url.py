@@ -23,12 +23,3 @@ def luu_tat_ca_file(history, so_luong_trang):
             break
         luu_file(url_con, stt)
         print(f'{stt} {url_con}')
-
-
-def main():
-    tao_thu_muc('thinhvv')
-    luu_file('https://baomoi.com/', 2)
-
-
-if __name__ == "__main__":
-    main()
